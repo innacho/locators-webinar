@@ -5,8 +5,11 @@ const puppeteer = require('puppeteer');
     headless: false
   });
   const page = await browser.newPage();
-  await page.goto('https://deworkacy.ru');
+  await page.goto('http://localhost:3000/site/index.html');
   await page.screenshot({path: 'example.png'});
-  await page.waitForTimeout(5000);
-  page.type()
+  await page.click("button")
+  await page.waitForTimeout(500);
+  let element = await page.$('#resultBlock')
+  let value = await page.evaluate(el => JSON.parse(el.textContent), element)
+  console.log(value)
 })();

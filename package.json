@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "browser_run": "node index.js",
     "devServer": "nodemon smallbackend/index.js"
   },
   "author": "",
