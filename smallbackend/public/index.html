@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<script>
+axios.post('/form')
+  .then(data => {
+    console.log(data)
+    document.getElementById('resultBlock').innerHTML = JSON.stringify(data.data)
+  })
+</script>
+<body>
+Awesome Testing App
+<pre>
+<div id="resultBlock">
+
+</div>
+    </pre>
+</body>
+</html>
