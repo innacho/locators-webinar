@@ -6,8 +6,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <script>
-function run () {
-  axios.post('/form')
+function run (position) {
+  axios.get('/form?position=' + position)
     .then(data => {
       console.log(data)
       document.getElementById('resultBlock').innerHTML = JSON.stringify(data.data)
@@ -16,7 +16,13 @@ function run () {
 </script>
 <body>
 Awesome Testing App
-<button onclick="run()">Run request</button>
+<div class="redblock" style="color: red">Information</div>
+<div id="left_button">
+    <button onclick="run('left')">Run left request</button>
+</div>
+<div id="right_button">
+    <button onclick="run('right')">Run right request</button>
+</div>
 <pre>
 <div id="resultBlock">
 

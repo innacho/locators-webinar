@@ -7,8 +7,9 @@ app.use(bodyParser.json())
 
 app.use('/site', express.static(__dirname + '/public'));
 
-app.post('/form', (req, res) => {
-  res.send({success: true})
+app.get('/form', (req, res) => {
+  console.log(req.query)
+  res.send({success: req.query.position=='left' })
 })
 
 app.listen(port, () => {
